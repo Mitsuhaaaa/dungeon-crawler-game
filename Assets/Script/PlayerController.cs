@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask canClickLayer;
     [SerializeField] public VirtualController vCont;
     [SerializeField] private int hp = 10;
+    [SerializeField] private HPbarUIScript hpBarUI;
 
     #region Singleton
     private static PlayerController _instance;
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
     {
         hp -= damage;
         Debug.Log(hp);
+        hpBarUI.updateHpBarUI(-damage);
         if (hp <= 0)
         {
             GameOver();
