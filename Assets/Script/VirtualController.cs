@@ -5,6 +5,10 @@ using UnityEngine.AI;
 
 public class VirtualController : MonoBehaviour
 {
+
+    public Vector3 Position { get { return gameObject.transform.position; } }
+    public float StopDistance { get { return agent.stoppingDistance; } }
+
     private NavMeshAgent agent;
 
     public event System.Action<int> OnDamageTaken = delegate { };
